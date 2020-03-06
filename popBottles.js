@@ -1,14 +1,16 @@
-// Write a program so that you can figure out how many total bottles
-// of pop can be redeemed given a customer investment.
+// Logs stats for the pop recycling function
 const printTotalPop = (dollars) => {
   let earnedByEmptiesTotal = 0;
   let earnedByCapsTotal = 0;
   let remainingEmpties;
   let remainingCaps;
+
+  // Write a program so that you can figure out how many total bottles
+  // of pop can be redeemed given a customer investment.
   const totalPop = (dollars, emptyBottles = 0, caps = 0) => {
 
-    // Not enough dollars or trades to get another bottle, log the current
-    // supply to remind customer
+    // If not enough dollars or trades to get another bottle, save the current
+    // supply to log at the end
     if (dollars < 2 && (emptyBottles < 2 || !emptyBottles) && (caps < 4 || !caps)) {
       remainingEmpties = emptyBottles;
       remainingCaps = caps;
