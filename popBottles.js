@@ -1,9 +1,9 @@
 // Write a program so that you can figure out how many total bottles
 // of pop can be redeemed given a customer investment.
-const totalPop = (dollars, emptyBottles, caps) => {
+const totalPop = (dollars, emptyBottles = 0, caps = 0) => {
 
   // Not enough dollars or trades to get another bottle
-  if (dollars < 2 && emptyBottles < 2 && caps < 4) {
+  if (dollars < 2 && (emptyBottles < 2 || !emptyBottles) && (caps < 4 || !caps)) {
     return 0;
   }
 
@@ -31,5 +31,7 @@ const totalPop = (dollars, emptyBottles, caps) => {
   return newBottles + totalPop(0, emptyBottles, caps);
 }
 
-console.log(totalPop(20, 0, 0));
-console.log(totalPop(10, 0, 0));
+console.log(totalPop(10));
+console.log(totalPop(20));
+console.log(totalPop(30));
+console.log(totalPop(40));
